@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.main-menu {
+    width: 300px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.add-question {
+    width: 300px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.add-question-form {
+    margin: 5px;
+}

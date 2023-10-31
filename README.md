@@ -1,5 +1,7 @@
 # Top10
 
+This project will implement a simple web surface for the game Top10. It should be possible to play the game and count the number of missunderstandings. A verry importent feature should be, that it is possible to create new questions and save them to the database. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
 
 ## Development server
