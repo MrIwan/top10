@@ -1,0 +1,21 @@
+<mat-card class="main-card">
+    <mat-card-header class="main-card-header">
+        <mat-card-title>Spiel</mat-card-title>
+    </mat-card-header>
+    <mat-stepper #stepper>
+        <mat-step>
+            <ng-template matStepLabel>Frage Auswählen</ng-template>  
+            <div *ngFor="let q of questions">
+                <app-question [question]="q" (selectQuestion)="selectQuestion(q, stepper)"></app-question>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Antworten sammeln</ng-template>
+            <app-question [question]="selected_question"></app-question>
+        </mat-step>
+    </mat-stepper>
+    <mat-card-actions>
+        <button mat-button routerLink="/">Hauptmenü</button>
+        <button mat-button (click)="newQuestions(stepper)">Neue Fragen</button>
+    </mat-card-actions>
+</mat-card>

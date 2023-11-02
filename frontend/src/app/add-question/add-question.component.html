@@ -1,0 +1,18 @@
+<mat-card class="main-card" (keydown.control.enter)="submitQuestion()">
+    <mat-card-header class="main-card-header">
+        <mat-card-title>Fragen Hinzufügen</mat-card-title>
+    </mat-card-header>
+    <mat-form-field class="add-question-formfield">
+        <mat-label>Dein Name</mat-label>
+        <input matInput [(ngModel)]="question.author">
+    </mat-form-field>
+    <mat-form-field class="add-question-formfield">
+        <mat-label>Neue Frage:</mat-label>
+        <textarea rows="6" matInput [(ngModel)]="question.content" placeholder="Ihr steht auf dem Deck der sinkenden Titanic. Mit welchem Gegenstand wollt ihr euch retten? Von du überlebst auf jeden Fall bis dein Tod ist dir sicher."></textarea>
+        <mat-hint>Gebt auf jeden Fall von bis an!</mat-hint>
+    </mat-form-field>        
+    <mat-card-actions>
+        <button mat-button routerLink="/">Hauptmenü</button>
+        <button mat-button (click)="submitQuestion()">Frage Speichern</button>
+    </mat-card-actions>
+</mat-card>

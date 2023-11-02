@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#bg {
+    height: 100%;
+    background-image: url('./assets/images/bg.jpg');
+    background-size: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-img {
+    width: 600px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-card {
+    width: 600px;
+    opacity: 0.94;
+}
+
+.main-card-header {
+    display: flex;
+    justify-content: center;
+}
+
+.main-card-h {
+    font-weight: bold;
+}
+
+.add-question-form {
+    margin: 5px;
+}
+
+.add-question-formfield {
+    width: 100%;
+}
+
+.question {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(97, 97, 97);
+    font-family: 'Lucida Sans';
+}
+
+.question:hover {
+    background-color: lightgray;
+    transition: 100ms;
+    cursor: grab;
+}
+
+.question-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    vertical-align: middle;
+    font-size: small;
+}
+
+.question-footer {
+    margin: 5px;
+    text-align: center;
+    font-size: xx-small;
+}
+
+.rm-question {
+    margin: 5px;
+    padding: 5px;
+}

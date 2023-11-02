@@ -1,0 +1,13 @@
+<div class="question" (click)="questionClick()">
+    <div class="question-header">
+        <mat-icon >person</mat-icon>
+        {{question.author}}
+        <button mat-icon-button color="warn" (click)="removeQuestion()">
+            <mat-icon>delete</mat-icon>
+          </button>
+    </div>
+    {{question.content}}
+    <div class="question-footer">
+        {{question.id}}
+    </div>
+</div>

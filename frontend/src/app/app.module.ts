@@ -10,6 +10,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatStepperModule} from '@angular/material/stepper';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +21,8 @@ import { AddQuestionComponent } from './add-question/add-question.component';
 import { MainGameComponent } from './main-game/main-game.component';
 import { AllQuestionsComponent } from './all-questions/all-questions.component';
 import { AppRoutingModule } from './app-routing.module';
+import { QuestionComponent } from './question/question.component';
+import { RmQuestionComponent } from './rm-question/rm-question.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,9 @@ import { AppRoutingModule } from './app-routing.module';
     MainMenuComponent,
     AddQuestionComponent,
     MainGameComponent,
-    AllQuestionsComponent
+    AllQuestionsComponent,
+    QuestionComponent,
+    RmQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +45,9 @@ import { AppRoutingModule } from './app-routing.module';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatStepperModule,
     AppRoutingModule,
   ],
   providers: [],
