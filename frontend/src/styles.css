@@ -51,6 +51,13 @@ body {
     font-weight: bold;
 }
 
+.main-card-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .add-question-form {
     margin: 5px;
 }
@@ -59,10 +66,6 @@ body {
     width: 100%;
 }
 
-.add-question-btn-container {
-    display: flex;
-    justify-content: center;
-}
 
 
 .question {

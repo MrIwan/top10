@@ -1,4 +1,4 @@
-import { Component, Inject, Input } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Question } from '../interfaces';
 import { QUESTION_MOCKUP } from '../interfaces_mockups';
