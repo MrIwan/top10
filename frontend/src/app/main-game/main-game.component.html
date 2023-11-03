@@ -6,12 +6,12 @@
         <mat-step>
             <ng-template matStepLabel>Frage Auswählen</ng-template>  
             <div *ngFor="let q of questions">
-                <app-question [question]="q" (selectQuestion)="selectQuestion(q, stepper)"></app-question>
+                <app-question [question]="q" (questionRemoved)="newQuestions(stepper)" (selectQuestion)="selectQuestion(q, stepper)"></app-question>
             </div>
         </mat-step>
         <mat-step>
             <ng-template matStepLabel>Antworten sammeln</ng-template>
-            <app-question [question]="selected_question"></app-question>
+            <app-question [question]="selected_question" (questionRemoved)="newQuestions(stepper)"></app-question>
         </mat-step>
     </mat-stepper>
     <mat-card-actions>
