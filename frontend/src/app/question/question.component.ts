@@ -4,6 +4,7 @@ import { Question } from '../interfaces';
 import { ApiService } from '../api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { RmQuestionComponent } from '../rm-question/rm-question.component';
+import { AddQuestionComponent } from '../add-question/add-question.component';
 
 @Component({
   selector: 'app-question',
@@ -29,5 +30,9 @@ export class QuestionComponent {
 
   questionClick() {
     this.selectQuestion.emit(this.question);
+  }
+
+  editQuestion() {
+    this.dialog.open(AddQuestionComponent, {data: this.question});
   }
 }

@@ -10,8 +10,8 @@ import { RmQuestionComponent } from './rm-question/rm-question.component';
   providedIn: 'root'
 })
 export class ApiService {
-  url = '/api';
-  // url = 'http://127.0.0.1:8000'
+  // url = '/api';
+  url = 'http://127.0.0.1:8000'
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',

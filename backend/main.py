@@ -16,6 +16,8 @@ url = 'http://admin:YOURPASSWORD@terra:8088/'
 
 origins = [
     "http://localhost:4200",
+    "http://127.0.0.1:4200",
+    "http://127.0.0.1:4200/submit-question",
 ]
 
 app.add_middleware(
@@ -60,12 +62,17 @@ async def getQuestion():
 
 @app.post("/submit-question")
 async def submitQuestion(question: Question):
-    print(question.content)
+    db = getDB()
     if question.content == '':
         return {"status": "nicht gespeichert"}
-    if question.author == '':
+    elif question.author == '':
         question.author = 'anonym'
-    db = getDB()
+    elif question.id != '':
+        doc = db[question.id]
+        doc['author'] = question.author
+        doc['content'] = question.content
+        db[question.id] = doc
+        return {"status": "Frage geupdated"}
     db.save({
         'type': question.type,
         'author': question.author,

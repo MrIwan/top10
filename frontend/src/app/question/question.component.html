@@ -4,7 +4,10 @@
         {{question.author}}
         <button mat-icon-button color="warn" (click)="removeQuestion()">
             <mat-icon>delete</mat-icon>
-          </button>
+        </button>
+        <button mat-icon-button (click)="editQuestion()">
+            <mat-icon>edit</mat-icon>
+        </button>
     </div>
     {{question.content}}
     <div class="question-footer">

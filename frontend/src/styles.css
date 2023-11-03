@@ -13,17 +13,17 @@ body {
     background-position: center;
     display: flex;
     justify-content: center;
+    background-color: pink;
 }
 
 .logo-img {
-    width: auto;
+    width: 600px;
 }
-
-
 
 .main-content {
     display: flex;
     flex-direction: column;
+    
 }
 
 .main-card {
@@ -59,6 +59,12 @@ body {
 .add-question-formfield {
     width: 100%;
 }
+
+.add-question-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
 
 .question {
     margin: 5px;

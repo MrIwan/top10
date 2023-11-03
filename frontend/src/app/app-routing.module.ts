@@ -8,7 +8,6 @@ import { AllQuestionsComponent } from './all-questions/all-questions.component';
 const routes: Routes = [
   { path: '', component: MainMenuComponent },
   { path: 'main-game', component: MainGameComponent },
-  { path: 'add-question', component: AddQuestionComponent },
   { path: 'all-questions', component: AllQuestionsComponent },
 ];
 
