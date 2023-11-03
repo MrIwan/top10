@@ -13,7 +13,9 @@ export class MainGameComponent {
   questions: Question[] = []
   selected_question: Question = QUESTION_MOCKUP;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService) {
+    this.selected_question.content = 'Klicke zuerst auf eine Frage um sie auszuwählen'
+  }
 
   ngOnInit() {
     this.getQuestions();
