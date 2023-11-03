@@ -1,24 +1,25 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Answer, Question } from './interfaces';
-import { Observable, catchError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
-import { RmQuestionComponent } from './rm-question/rm-question.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  // url = '/api';
-  url = 'http://127.0.0.1:8000'
+  url = '/api';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
     })
   }
 
-  constructor(private http: HttpClient, private snackBar: MatSnackBar, private dialog: MatDialog) { }
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) {
+    if(isDevMode()){
+      this.url = 'http://127.0.0.1:8000';
+    }
+  }
 
   getQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>(this.url + '/get-question')
