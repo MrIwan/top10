@@ -10,13 +10,16 @@ body {
     background-image: url('./assets/images/bg.jpg');
     background-size: 100%;
     background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
 }
 
 .logo-img {
-    width: 600px;
+    width: auto;
 }
+
+
 
 .main-content {
     display: flex;
@@ -26,6 +29,18 @@ body {
 .main-card {
     width: 600px;
     opacity: 0.94;
+}
+
+@media (max-width : 600px) {
+    .logo-img {
+        width: 60%;
+        margin-left: 20%
+    }
+
+    .main-card {
+        width: 95%;
+        margin-left: 2.5%;
+    }
 }
 
 .main-card-header {
