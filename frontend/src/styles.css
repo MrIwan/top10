@@ -13,7 +13,6 @@ body {
     background-position: center;
     display: flex;
     justify-content: center;
-    background-color: pink;
 }
 
 .logo-img {
@@ -23,7 +22,8 @@ body {
 .main-content {
     display: flex;
     flex-direction: column;
-    
+    height: 100%;
+    overflow: scroll;
 }
 
 .main-card {
