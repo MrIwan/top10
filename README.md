@@ -8,7 +8,7 @@ Dieses Mini-Projekt soll dir und deinen Freunden ermöglichen, einfach TOP10 mit
 
 Design-technisch ist alles in einem trashigen 2000er Look gehalten. Nice! 
 
-ressourcen\Screenshot.png
+![ressourcen\Screenshot.png]
 
 ## Der Ablauf am Abend
 
