@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from couchdb import *
 import random
+import time
 
 class Question(BaseModel):
     id: str
@@ -12,7 +13,7 @@ class Question(BaseModel):
     used: int
 
 app = FastAPI()
-url = 'http://admin:YOURPASSWORD@terra:8088/'
+url = 'http://admin:YOURPASSWORD@db:8088/'
 
 origins = [
     "http://localhost:4200",
@@ -28,8 +29,25 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+def connect_with_retry(url, retries=5, delay=3):
+    for i in range(retries):
+        try:
+            server = Server(url)
+            # Prüfe Verbindung zur _users-DB
+            server['_users'].info()
+            return server
+        except (http.ServerError, ConnectionError) as e:
+            if i == retries - 1:
+                raise
+            print(f"Verbindungsfehler ({e}), neuer Versuch in {delay}s...")
+            time.sleep(delay)
+
+
+
 def getDB():
-    server = Server(url)
+    server = connect_with_retry("http://admin:YOURPASSWORD@db:5984/")
+    if 'top10' not in server:
+        server.create('top10')
     return server['top10']
 
 
